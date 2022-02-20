@@ -56,19 +56,3 @@
 
 }
 
-@media (prefers-color-scheme: dark) {
-    .mobile-window {
-        background: #1e1e1e;
-
-        &.active {
-            box-shadow: 0 -4px 30px rgba(0, 0, 0, 0.9);
-        }
-    }
-
-    .mobile-personal-area__title,
-    .mobile-menu__title,
-    .mobile-search__title {
-        color: #fff;
-        border-bottom: 1px solid #000;
-    }
-}

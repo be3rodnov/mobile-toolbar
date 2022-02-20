@@ -200,15 +200,3 @@
         }
     }
 }
-
-@media (prefers-color-scheme: dark) {
-    .mobile-toolbar__item.item .item {
-        &__icon.icon .icon__circle {
-            filter: brightness(0);
-        }
-
-        &__effect.effect .effect__circle {
-            filter: brightness(0);
-        }
-    }
-}

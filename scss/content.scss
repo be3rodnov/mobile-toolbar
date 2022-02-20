@@ -40,17 +40,10 @@ body {
     overflow: hidden;
   }
 
-  @media (prefers-color-scheme: light) {
-    background: white;
-    color: #333;
-  }
+  background: white;
+  color: #333;
 
   &.dark {
-    background: #1E1E1E;
-    color: #D4D4D4;
-  }
-
-  @media (prefers-color-scheme: dark) {
     background: #1E1E1E;
     color: #D4D4D4;
   }

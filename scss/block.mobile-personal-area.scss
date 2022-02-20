@@ -218,27 +218,3 @@
         }
     }
 }
-
-@media (prefers-color-scheme: dark) {
-    .mobile-personal-area {
-        &__log-in {
-            background: rgba(255, 255, 255, .48);
-
-            &:hover {
-                background: #fff;
-            }
-
-            span {
-                color: #000;
-            }
-        }
-
-        &__sign-up {
-            color: #fff;
-        }
-
-        &__log-in-social.log-in-social .log-in-social__title {
-            color: #fff;
-        }
-    }
-}

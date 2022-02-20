@@ -110,16 +110,3 @@
     }
 }
 
-@media (prefers-color-scheme: dark) {
-    .mobile-search__btn {
-        background: rgba(255, 255, 255, .48);
-
-        span {
-            color: #000;
-        }
-
-        &:hover {
-            background: #fff;
-        }
-    }
-}
