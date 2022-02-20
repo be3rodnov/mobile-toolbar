@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#fff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1E1E1E" media="(prefers-color-scheme: dark)">
+  <title>Mobile-toolbar</title>
+  <link rel="stylesheet" href="./style.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <!--mobile-menu-->
+  <div class="mobile-window mobile-menu">
+    <div class="mobile-menu__title">Меню</div>
+    <div class="mobile-menu__list">
+      <div class="mobile-menu__list-wrap">
+        <li class="mobile-menu__item"><a class="mobile-menu__link" href="#">Главная</a></li>
+        <li class="mobile-menu__item"><a class="mobile-menu__link" href="#">О компании</a></li>
+        <li class="mobile-menu__item"><a class="mobile-menu__link" href="#">Услуги</a></li>
+        <li class="mobile-menu__item"><a class="mobile-menu__link" href="#">Оптовикам</a></li>
+        <li class="mobile-menu__item"><a class="mobile-menu__link" href="#">Контакты</a></li>
+        <li class="mobile-menu__item"><a class="mobile-menu__link" href="#">Главная</a></li>
+        <li class="mobile-menu__item"><a class="mobile-menu__link" href="#">О компании</a></li>
+        <li class="mobile-menu__item"><a class="mobile-menu__link" href="#">Услуги</a></li>
+        <li class="mobile-menu__item"><a class="mobile-menu__link" href="#">Оптовикам</a></li>
+        <li class="mobile-menu__item"><a class="mobile-menu__link" href="#">Контакты</a></li>
+      </div>
+    </div>
+    <div class="mobile-menu__social social">
+      <a class="social__item social__item--fb" target="_blank" href="#"></a>
+      <a class="social__item social__item--vk" target="_blank" href="#"></a>
+    </div>
+    <div class="mobile-menu__light-mode">
+      <span></span>
+    </div>
+  </div>
+
+  <script>
+    $('.mobile-menu__light-mode').on('click', function () {
+      darkMode();
+    });
+
+    if (window.matchMedia &&
+      window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        darkMode();
+    }
+
+    function darkMode() {
+      $('.mobile-menu__light-mode').toggleClass('active');
+      $('.header__light-mode').toggleClass('active');
+      $('body').toggleClass('dark');
+    }
+  </script>
+  <!--end mobile-menu-->
+
+  <!--mobile-personal-area-->
+  <div class="mobile-window mobile-personal-area">
+    <div class="mobile-personal-area__title">Личный кабинет</div>
+    <div class="mobile-personal-area__btns">
+      <div class="mobile-personal-area__log-in"><span>Войти</span></div>
+      <div class="mobile-personal-area__sign-up"><span>Зарегистрироваться</span></div>
+    </div>
+    <div class="mobile-personal-area__log-in-social log-in-social">
+      <div class="log-in-social__title">Войти с помощью:</div>
+      <div class="log-in-social__social social">
+        <a class="social__item social__item--fb" target="_blank" href="#"></a>
+        <a class="social__item social__item--vk" target="_blank" href="#"></a>
+      </div>
+    </div>
+
+  </div>
+  <!--end mobile-personal-area-->
+
+  <!--mobile-search-->
+  <div class="mobile-window mobile-search">
+    <div class="mobile-search__title">Поиск</div>
+    <form action="">
+      <div class="mobile-search__input">
+        <input type="text" placeholder="Введите текст...">
+      </div>
+      <button class="mobile-search__btn" type="button"><span>Найти</span></button>
+    </form>
+  </div>
+
+  <!--end mobile-search-->
+
+  <!--mobile-toolbar-->
+  <div class="mobile-toolbar">
+    <div class="mobile-toolbar__item mobile-toolbar__item--personal-area item">
+      <div class="item__icon icon">
+        <div class="icon__circle"></div>
+        <div class="icon__bg" style="background: url(./images/icon-profile.svg) center / contain no-repeat;">
+        </div>
+      </div>
+      <div class="item__text">Профиль</div>
+      <div class="item__effect effect">
+        <div class="effect__inner">
+          <div class="effect__circle"> </div>
+        </div>
+      </div>
+    </div>
+    <div class="mobile-toolbar__item mobile-toolbar__item--menu item">
+      <div class="item__icon icon">
+        <div class="icon__circle"></div>
+        <div class="icon__bg" style="background: url(./images/icon-category.svg) center / contain no-repeat;">
+        </div>
+      </div>
+      <div class="item__text">Меню</div>
+      <div class="item__effect effect">
+        <div class="effect__inner">
+          <div class="effect__circle"> </div>
+        </div>
+      </div>
+    </div>
+    <div class="mobile-toolbar__item mobile-toolbar__item--search item">
+      <div class="item__icon icon">
+        <div class="icon__circle"></div>
+        <div class="icon__bg" style="background: url(./images/icon-search.svg) center / contain no-repeat;">
+        </div>
+      </div>
+      <div class="item__text">Поиск</div>
+      <div class="item__effect effect">
+        <div class="effect__inner">
+          <div class="effect__circle"> </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--end mobile-toolbar-->
+  <!--message-->
+  <div class="message">
+    <span>Please reduce the screen width or open this page from a mobile device.</span>
+  </div>
+  <!--end message-->
+  <script>
+    $('.mobile-toolbar__item--personal-area').click(function () {
+      $('.mobile-personal-area').toggleClass('active').siblings().removeClass('active');
+    });
+    $('.mobile-toolbar__item--menu').click(function () {
+      $('.mobile-menu').toggleClass('active').siblings().removeClass('active');
+    });
+    $('.mobile-toolbar__item--search').click(function () {
+      $('.mobile-search').toggleClass('active').siblings().removeClass('active');
+    });
+
+
+    $('.mobile-toolbar__item').click(function () {
+      if ($('.mobile-window').hasClass('active')) {
+        $('body').addClass('no-scroll');
+      } else {
+        $('body').removeClass('no-scroll');
+      }
+      $(this).toggleClass('active').siblings().removeClass('active');
+      if ($('.mobile-toolbar').find('.mobile-toolbar__item').hasClass('active')) {
+        $('.mobile-toolbar').addClass('active');
+      } else {
+        $('.mobile-toolbar').removeClass('active');
+      }
+    });
+  </script>
+</body>
+
+</html>

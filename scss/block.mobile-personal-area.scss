@@ -1,0 +1,244 @@
+.mobile-personal-area {
+    flex-direction: column;
+    align-items: flex-start;
+
+    @media(min-width:1000.01px) {
+        display: none;
+    }
+
+    @media(max-width:1000px) {
+        display: flex;
+    }
+
+
+    &.active {
+        .mobile-personal-area {
+            &__btns {
+                transform: translateX(0%);
+                opacity: 1;
+                visibility: visible;
+            }
+
+            &__log-in-social {
+                &.log-in-social {
+                    .log-in-social {
+
+                        &__social {
+                            &.social {
+                                .social {
+                                    &__item {
+                                        transform: translateY(0%);
+                                        opacity: 1;
+                                        visibility: visible;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &__title {
+        font-weight: 700;
+        font-size: 40px;
+        line-height: 48px;
+        color: #000;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #ccc;
+        width: 100%;
+
+        @media(max-width:480px) {
+            font-size: 30px;
+            line-height: 38px;
+        }
+    }
+
+    &__btns {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: translateX(10px);
+        opacity: 0;
+        visibility: hidden;
+        margin-top: 20px;
+        transition: .3s ease-out .3s;
+    }
+
+    &__log-in {
+        padding: 9px 40px 9px;
+        position: relative;
+        overflow: hidden;
+        border-radius: 30px;
+        transition: .3s ease-out;
+        cursor: pointer;
+        background: rgba(0, 0, 0, .48);
+        transition: .3s ease-out;
+        -webkit-tap-highlight-color: transparent;
+
+        &:hover {
+            background: rgba(0, 0, 0, 1);
+        }
+
+        span {
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 24px;
+            color: #fff;
+            position: relative;
+            z-index: 1;
+            transition: .3s ease-out;
+        }
+    }
+
+    &__sign-up {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 16px;
+        color: #000;
+        margin-left: 20px;
+        -webkit-tap-highlight-color: transparent;
+        cursor: pointer;
+    }
+
+    &__log-in-social {
+        margin-top: 20px;
+
+        &.log-in-social {
+            .log-in-social {
+                &__title {
+                    font-weight: 500;
+                    font-size: 16px;
+                    line-height: 20px;
+                    color: #000;
+                }
+
+                &__social {
+                    &.social {
+                        display: flex;
+                        align-items: center;
+                        margin-top: 10px;
+
+                        .social {
+                            &__item {
+                                display: block;
+                                margin-left: 15px;
+                                transform: translateY(20px);
+                                opacity: 0;
+                                visibility: hidden;
+                                width: 60px;
+                                height: 60px;
+                                border-radius: 50%;
+                                -webkit-tap-highlight-color: transparent;
+
+                                @media(max-width:480px) {
+                                    width: 50px;
+                                    height: 50px;
+                                }
+
+                                &:after {
+                                    content: '';
+                                    position: absolute;
+                                    top: 50%;
+                                    left: 50%;
+                                    transform: translate(-50%, -50%);
+                                    width: 50%;
+                                    height: 50%;
+                                }
+
+                                &:first-child {
+                                    margin-left: 0;
+                                }
+
+                                &:nth-child(1) {
+                                    transition: .3s ease-out .3s;
+                                }
+
+                                &:nth-child(2) {
+                                    transition: .3s ease-out .35s;
+                                }
+
+                                &:nth-child(3) {
+                                    transition: .3s ease-out .4s;
+                                }
+
+                                &:nth-child(4) {
+                                    transition: .3s ease-out .45s;
+                                }
+
+                                &:nth-child(5) {
+                                    transition: .3s ease-out .5s;
+                                }
+
+                                &--fb {
+                                    background: #4267B2;
+
+                                    &:after {
+                                        background: url(./images/icon-fb.svg) center / contain no-repeat;
+                                    }
+                                }
+
+                                &--vk {
+                                    background: #4c75a3;
+
+                                    &:after {
+                                        background: url(./images/icon-vk.svg) center / contain no-repeat;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.dark {
+    .mobile-personal-area {
+        &__log-in {
+            background: rgba(255, 255, 255, .48);
+
+            &:hover {
+                background: #fff;
+            }
+
+            span {
+                color: #000;
+            }
+        }
+
+        &__sign-up {
+            color: #fff;
+        }
+
+        &__log-in-social.log-in-social .log-in-social__title {
+            color: #fff;
+        }
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .mobile-personal-area {
+        &__log-in {
+            background: rgba(255, 255, 255, .48);
+
+            &:hover {
+                background: #fff;
+            }
+
+            span {
+                color: #000;
+            }
+        }
+
+        &__sign-up {
+            color: #fff;
+        }
+
+        &__log-in-social.log-in-social .log-in-social__title {
+            color: #fff;
+        }
+    }
+}
